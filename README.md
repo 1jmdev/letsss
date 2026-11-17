@@ -60,40 +60,6 @@ letsss [OPTIONS] [PATHS]...
 
 `PATHS` may be files, folders, or `.txt` path lists such as an Everything export.
 
-## Building from source
-
-Requirements: [Rust](https://rustup.rs) (stable) and [Bun](https://bun.sh).
-On Linux, the desktop app also needs the Tauri system libraries:
-
-```bash
-sudo apt install libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf libssl-dev
-```
-
-```bash
-bun install
-
-# Desktop app, installers are written to target/release/bundle/
-bun tauri build
-
-# Command-line executable, written to target/release/letsss(.exe)
-cargo build --release -p letsss_cli
-
-# Development
-bun tauri dev
-```
-
-Build each platform on that platform; the release workflow does this automatically.
-
-## Releasing
-
-Push a version tag and GitHub Actions builds and publishes the CLI binaries and desktop
-installers for Windows and Linux:
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
 ## License
 
 [MIT](LICENSE)
