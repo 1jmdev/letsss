@@ -72,7 +72,7 @@ strings = ["AxeSpam", "axe spam"]
 name = "Mace Swap"
 category = "combat"
 weight = 3
-strings = ["MaceSwap", "Mace Swap", "mace_swap", "AutoMace", "Silent Mace", "Mace Aura", "SpearSwap", "Spear Swap", "StunSlam", "Stun Slam", "Stun slam", "Failed to switch to mace after axe!"]
+strings = ["MaceSwap", "Mace Swap", "mace_swap", "AutoMace", "Silent Mace", "Mace Aura", "SpearSwap", "Spear Swap", "StunSlam", "Stun Slam", "Failed to switch to mace after axe!"]
 
 [[module]]
 name = "W-Tap"
@@ -216,7 +216,7 @@ strings = ["PlayerESP", "Player ESP", "StorageESP", "Storage ESP", "BlockESP", "
 name = "X-Ray"
 category = "render"
 weight = 2
-strings = ["XRay", "X-Ray", "Netherite Finder", "BaseFinder", "Rtp Base Finder"]
+strings = ["X-Ray", "Netherite Finder", "BaseFinder", "Rtp Base Finder"]
 
 [[module]]
 name = "Nuker"
@@ -240,7 +240,7 @@ strings = ["PackSpoof", "Pack Spoof"]
 name = "Self Destruct"
 category = "evasion"
 weight = 4
-strings = ["SelfDestruct", "Self Destruct", "Generic Selfdestruct", "String Cleaner", "Anti SS Tool", "USN Journal Cleaner", "Delete USN Journal", "player recently self destructed"]
+strings = ["Self Destruct", "Generic Selfdestruct", "String Cleaner", "Anti SS Tool", "USN Journal Cleaner", "Delete USN Journal", "player recently self destructed"]
 
 [[module]]
 name = "Disabler"

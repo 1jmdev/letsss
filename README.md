@@ -36,7 +36,7 @@ on the same release page.
 | Launch arguments | Java agents, boot class path changes, injected JVM options, attach handshakes |
 | Processes | Macro software, autoclickers, cheat-named processes |
 | Mods | Mod folders of every major launcher, version JARs, Modrinth verification, obfuscation, game logs |
-| Executable files | Downloads, Desktop, Temp, and running programs: strings, imports, packers, signatures |
+| Executable files | Running programs and paths you add: strings, imports, packers, signatures |
 | Execution artifacts | Prefetch, USN journal, BAM, recycle bin, shell history |
 | Network | DNS cache and hosts file entries for cheat domains |
 | Bypass detection | Cleared event logs, disabled services, deleted journals, blocked forensic tools |

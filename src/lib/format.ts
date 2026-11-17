@@ -5,7 +5,7 @@ export const MODULES: { id: Module; label: string; description: string }[] = [
   { id: "launch_arguments", label: "Launch arguments", description: "Java agents, boot class path and injected JVM options" },
   { id: "processes", label: "Processes", description: "Macro software, autoclickers and cheat-named processes" },
   { id: "mods", label: "Mods", description: "Mod folders, version JARs, Modrinth verification and game logs" },
-  { id: "files", label: "Executable files", description: "Downloads, Desktop, Temp and running program images" },
+  { id: "files", label: "Executable files", description: "Running program images and paths you add" },
   { id: "artifacts", label: "Execution artifacts", description: "Prefetch, USN journal, BAM, recycle bin and shell history" },
   { id: "network", label: "Network", description: "DNS cache and hosts file entries for cheat domains" },
   { id: "bypass", label: "Bypass detection", description: "Cleared logs, disabled services and blocked forensic tools" },

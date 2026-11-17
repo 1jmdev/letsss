@@ -39,21 +39,6 @@ pub fn temp() -> PathBuf {
     env::temp_dir()
 }
 
-/// Directories commonly holding downloaded or recently executed tools.
-pub fn user_drop_zones() -> Vec<PathBuf> {
-    let mut zones: Vec<PathBuf> = [dirs::download_dir(), dirs::desktop_dir(), Some(temp())]
-        .into_iter()
-        .flatten()
-        .collect();
-    if cfg!(windows) {
-        zones.extend(dirs::data_local_dir().map(|local| local.join("Temp")));
-        zones.push(data());
-    }
-    zones.sort_unstable();
-    zones.dedup();
-    zones
-}
-
 /// Minecraft game directories: the default root, launcher instances, and `--gameDir` of running games.
 pub fn game_directories(system: &SystemSnapshot) -> Vec<PathBuf> {
     let home = home();

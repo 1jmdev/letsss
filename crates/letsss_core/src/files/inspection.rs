@@ -15,7 +15,6 @@ use crate::{
     files::binary,
     finding::{Evidence, Finding, Severity},
     options::Module,
-    paths,
 };
 
 const WALK_DEPTH: usize = 3;
@@ -78,9 +77,6 @@ pub fn inspect(context: &Context) -> Result<Vec<Finding>> {
                     .any(|directory| normalized.contains(directory))
             }),
     );
-    for zone in paths::user_drop_zones() {
-        walk(&zone, WALK_DEPTH, &mut targets);
-    }
     targets.sort_unstable();
     targets.dedup();
     let own = env::current_exe().ok();
