@@ -89,7 +89,11 @@ fi
 
 step "Publishing ${tag}"
 run git add Cargo.toml Cargo.lock package.json src-tauri/tauri.conf.json
-run git commit -m "release ${tag}"
+if git diff --cached --quiet; then
+    printf 'Version files are already committed, skipping commit.\n'
+else
+    run git commit -m "release ${tag}"
+fi
 run git tag "${tag}"
 run git push origin HEAD "${tag}"
 run gh release create "${tag}" "${output}"/* \
