@@ -1,6 +1,6 @@
 use std::{collections::HashMap, sync::Mutex};
 
-use inspection::{Finding, Module, Observer, Progress};
+use letsss_core::{Finding, Module, Observer, Progress};
 use serde::Serialize;
 use tauri::{AppHandle, Emitter};
 

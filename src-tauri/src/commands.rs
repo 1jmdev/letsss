@@ -1,6 +1,6 @@
 use std::{fs, path::PathBuf, thread};
 
-use inspection::{HostSummary, Options, Report, SystemSnapshot};
+use letsss_core::{HostSummary, Options, Report, SystemSnapshot};
 use serde::Serialize;
 use tauri::{AppHandle, Manager, State};
 
@@ -27,7 +27,7 @@ pub fn start_inspection(app: AppHandle, sessions: State<Sessions>, options: Opti
     let (session, cancelled) = sessions.open();
     thread::spawn(move || {
         let observer = EventObserver::new(app.clone(), session);
-        let result = inspection::run(&options, &observer, &cancelled);
+        let result = letsss_core::run(&options, &observer, &cancelled);
         let completion = match result {
             Ok(report) => {
                 app.state::<Sessions>().complete(session, report.clone());

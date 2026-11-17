@@ -6,7 +6,7 @@ use std::{
     },
 };
 
-use inspection::Report;
+use letsss_core::Report;
 
 #[derive(Default)]
 pub struct Sessions {
