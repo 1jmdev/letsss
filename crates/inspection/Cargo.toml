@@ -1,0 +1,9 @@
+[package]
+name = "inspection"
+description = "Platform-neutral Minecraft screenshare inspection core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+serde.workspace = true
+thiserror.workspace = true
