@@ -1,0 +1,255 @@
+# Generic cheat module names. Matched case-insensitively at word boundaries,
+# including fullwidth variants. A single hit is weak evidence; several distinct
+# modules together indicate a cheat regardless of the client.
+
+[[module]]
+name = "Kill Aura"
+category = "combat"
+weight = 3
+strings = ["KillAura", "Kill Aura", "ClickAura", "MultiAura", "LegitAura"]
+
+[[module]]
+name = "Aim Assist"
+category = "combat"
+weight = 3
+strings = ["AimAssist", "Aim Assist", "aim_assist", "AimBot", "AutoAim", "AimLock", "HeadSnap"]
+
+[[module]]
+name = "Silent Aim"
+category = "combat"
+weight = 3
+strings = ["SilentAim", "Silent Aim", "Silent Rotations", "SilentRotations"]
+
+[[module]]
+name = "Trigger Bot"
+category = "combat"
+weight = 3
+strings = ["TriggerBot", "Trigger Bot", "trigger_bot", "Trigger Key"]
+
+[[module]]
+name = "Reach"
+category = "combat"
+weight = 3
+strings = ["ReachHack", "ExtendReach", "LongReach", "LagReach"]
+
+[[module]]
+name = "Hitboxes"
+category = "combat"
+weight = 3
+strings = ["HitboxExpand", "Static HitBoxes"]
+
+[[module]]
+name = "Velocity"
+category = "combat"
+weight = 3
+strings = ["AntiKB", "Antiknockback", "NoKnockback", "GrimVelocity", "VelocitySpoof", "KBReduce", "JumpReset"]
+
+[[module]]
+name = "Criticals"
+category = "combat"
+weight = 2
+strings = ["Criticals", "AutoCrit", "CritBypass", "AlwaysCrit", "Only Crit", "Require Crit"]
+
+[[module]]
+name = "Bow Aimbot"
+category = "combat"
+weight = 3
+strings = ["BowAimbot", "Bow Aimbot", "BowAim", "BowSpam", "AutoBow"]
+
+[[module]]
+name = "Shield Disabler"
+category = "combat"
+weight = 3
+strings = ["ShieldDisabler", "Shield Disabler", "ShieldBreaker", "Breaking shield with axe..."]
+
+[[module]]
+name = "Axe Spam"
+category = "combat"
+weight = 2
+strings = ["AxeSpam", "axe spam"]
+
+[[module]]
+name = "Mace Swap"
+category = "combat"
+weight = 3
+strings = ["MaceSwap", "Mace Swap", "mace_swap", "AutoMace", "Silent Mace", "Mace Aura", "SpearSwap", "Spear Swap", "StunSlam", "Stun Slam", "Failed to switch to mace after axe!"]
+
+[[module]]
+name = "W-Tap"
+category = "combat"
+weight = 2
+strings = ["WTap", "W-Tap", "Auto Dtap", "AutoDtap", "auto_dtap", "SprintReset"]
+
+[[module]]
+name = "Fake Punch"
+category = "combat"
+weight = 2
+strings = ["fakePunch", "Fake Punch", "Damage Tick", "damagetick", "Anti Weakness", "Anti-Weakness"]
+
+[[module]]
+name = "Anti Bot"
+category = "combat"
+weight = 1
+strings = ["AntiBot", "Anti Bot"]
+
+[[module]]
+name = "Auto Crystal"
+category = "crystal"
+weight = 3
+strings = ["AutoCrystal", "Auto Crystal", "CrystalAura", "Crystal Aura", "AutoHitCrystal", "Auto Hit Crystal", "cw crystal", "CwCrystal", "dontPlaceCrystal", "dontBreakCrystal", "canPlaceCrystalServer", "autoCrystalPlaceClock", "Crystal Optimizer"]
+
+[[module]]
+name = "Auto Anchor"
+category = "crystal"
+weight = 3
+strings = ["AutoAnchor", "Auto Anchor", "AnchorAura", "AnchorTweaks", "DoubleAnchor", "Double Anchor", "SafeAnchor", "Safe Anchor", "AirAnchor", "Anchor Macro", "anchorMacro", "Anchor Exploder", "AnchorAction", "MarlowAnchor", "Places two anchors for massive damage"]
+
+[[module]]
+name = "Bed Aura"
+category = "crystal"
+weight = 3
+strings = ["BedAura", "AutoBed", "BedBomb", "Bed Macro"]
+
+[[module]]
+name = "Auto Totem"
+category = "totem"
+weight = 3
+strings = ["AutoTotem", "Auto Totem", "InventoryTotem", "Inventory Totem", "HoverTotem", "Hover Totem", "LegitTotem", "Force Totem", "Auto Retotem", "OffhandTotem", "Totem Offhand", "TotemSwitch", "REOFFHAND_TOTEM", "Totem Hit", "InventoryTotemLegit"]
+
+[[module]]
+name = "Auto Double Hand"
+category = "totem"
+weight = 3
+strings = ["AutoDoubleHand", "Auto Double Hand"]
+
+[[module]]
+name = "Auto Pot"
+category = "utility"
+weight = 2
+strings = ["AutoPot", "Auto Pot", "AutoPotRefill", "auto_pot_refill", "AutoNethPot", "healPotSlot", "speedPotSlot", "strengthPotSlot", "throwpot##"]
+
+[[module]]
+name = "Auto Armor"
+category = "utility"
+weight = 1
+strings = ["AutoArmor", "Auto Armor"]
+
+[[module]]
+name = "Auto Clicker"
+category = "utility"
+weight = 3
+strings = ["AutoClicker", "Auto Clicker", "Click Simulation", "jitterclick", "Jitter Click", "Butterfly Click", "CpsMinValue", "CpsMaxValue", "left_cps", "right_cps"]
+
+[[module]]
+name = "Fast Place"
+category = "utility"
+weight = 2
+strings = ["FastPlace", "Fast Place", "Place blocks faster", "No Break Delay", "NoJumpDelay", "No Jump Delay"]
+
+[[module]]
+name = "Key Pearl"
+category = "utility"
+weight = 2
+strings = ["KeyPearl", "Key Pearl", "key_pearl", "AutoPearl"]
+
+[[module]]
+name = "Web Macro"
+category = "utility"
+weight = 2
+strings = ["WebMacro", "Web Macro", "AutoWeb", "Auto Web", "auto_web"]
+
+[[module]]
+name = "Chest Stealer"
+category = "utility"
+weight = 2
+strings = ["ChestStealer", "Chest Stealer", "ChestSteal"]
+
+[[module]]
+name = "Inventory Move"
+category = "movement"
+weight = 2
+strings = ["InventoryMove", "InvMove", "FakeInv"]
+
+[[module]]
+name = "Elytra Swap"
+category = "movement"
+weight = 1
+strings = ["ElytraSwap", "Elytra Swap", "AutoFirework"]
+
+[[module]]
+name = "Fly"
+category = "movement"
+weight = 3
+strings = ["FlyHack", "CreativeFlight", "BoatFly", "PacketFly", "Jetpack"]
+
+[[module]]
+name = "Speed"
+category = "movement"
+weight = 3
+strings = ["SpeedHack", "BHop", "BunnyHop"]
+
+[[module]]
+name = "No Fall"
+category = "movement"
+weight = 2
+strings = ["NoFall", "NoFallDamage", "AntiFall"]
+
+[[module]]
+name = "No Slow"
+category = "movement"
+weight = 2
+strings = ["NoSlow", "NoSlowdown", "NoWeb"]
+
+[[module]]
+name = "Scaffold"
+category = "movement"
+weight = 3
+strings = ["Scaffold", "ScaffoldWalk", "FastBridge", "Fast Bridge", "Bridge Assist", "AutoBridge"]
+
+[[module]]
+name = "ESP"
+category = "render"
+weight = 2
+strings = ["PlayerESP", "Player ESP", "StorageESP", "Storage ESP", "BlockESP", "EntityESP", "Entity ESP", "Target HUD"]
+
+[[module]]
+name = "X-Ray"
+category = "render"
+weight = 2
+strings = ["XRay", "X-Ray", "Netherite Finder", "BaseFinder", "Rtp Base Finder"]
+
+[[module]]
+name = "Nuker"
+category = "world"
+weight = 3
+strings = ["Nuker", "NukerLegit", "InstantBreak"]
+
+[[module]]
+name = "Fake Lag"
+category = "evasion"
+weight = 3
+strings = ["FakeLag", "Fake Lag", "PingSpoof", "Ping Spoof"]
+
+[[module]]
+name = "Pack Spoof"
+category = "evasion"
+weight = 2
+strings = ["PackSpoof", "Pack Spoof"]
+
+[[module]]
+name = "Self Destruct"
+category = "evasion"
+weight = 4
+strings = ["SelfDestruct", "Self Destruct", "selfdestruct", "Generic Selfdestruct", "String Cleaner", "Anti SS Tool", "USN Journal Cleaner", "Delete USN Journal", "player recently self destructed"]
+
+[[module]]
+name = "Disabler"
+category = "evasion"
+weight = 3
+strings = ["GrimDisabler", "Disabler", "Stray Bypass", "Donut SMP Bypass", "AuthBypass", "obfuscatedAuth", "LicenseCheckMixin"]
+
+[[module]]
+name = "Replace Mod"
+category = "evasion"
+weight = 4
+strings = ["Replace Mod", "ReplaceMod"]

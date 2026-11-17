@@ -1,0 +1,118 @@
+# Behavioural rules for executables and archives. Tags follow MeowImportsChecker.
+# A rule fires when at least `minimum` distinct strings, imports or sections match.
+# scope: "binary" (PE/ELF), "archive" (JAR contents), or "both".
+
+[[rule]]
+tag = "A"
+name = "Synthetic mouse input"
+severity = "medium"
+scope = "binary"
+minimum = 2
+imports = ["mouse_event", "SendInput", "GetAsyncKeyState", "SetWindowsHookExA", "SetWindowsHookExW", "TrackMouseEvent", "XTestFakeButtonEvent", "XTestFakeKeyEvent"]
+strings = ["MOUSEEVENTF_LEFTDOWN", "MOUSEEVENTF_RIGHTDOWN", "/dev/uinput", "libxdo", "ydotool"]
+
+[[rule]]
+tag = "I"
+name = "Clicker behaviour strings"
+severity = "high"
+scope = "both"
+minimum = 2
+strings = ["left_cps", "right_cps", "CpsMinValue", "CpsMaxValue", "sldMinCPS", "slider_cps", "Average Left CPS", "Clicks per second", "Maximum CPS are 20!", "jitterclick", "isJitterClick", "Jitter Force", "Blockhit delay", "ClickerOnTop", "Blatant Mode", "No Hit Delay", "Randomizes Current CPS", "Waiting for minecraft process...", "Minecraft process found.", "MC ONLY", "Hotbar slots with pots", "Anti AFK", "Reach-> ", "toggle_block_break", "Click Sounds", "Butterfly"]
+
+[[rule]]
+tag = "G"
+name = "Process injection capability"
+severity = "high"
+scope = "binary"
+minimum = 3
+imports = ["OpenProcess", "VirtualAllocEx", "WriteProcessMemory", "CreateRemoteThread", "NtCreateThreadEx", "RtlCreateUserThread", "QueueUserAPC", "NtMapViewOfSection", "NtWriteVirtualMemory", "SetThreadContext", "process_vm_writev", "ptrace"]
+strings = ["LoadLibraryA", "ReflectiveLoader", "manual map", "ManualMap", "javaw.exe", "jvm.dll", "JNI_GetCreatedJavaVMs", "libjvm.so"]
+
+[[rule]]
+tag = "J"
+name = "JVM attach or JNI injection"
+severity = "high"
+scope = "binary"
+minimum = 2
+strings = ["JNI_GetCreatedJavaVMs", "JVMTI", "GetLoadedClasses", "RedefineClasses", "DefineClass", "AttachCurrentThread", "jvmti", "VirtualMachine.attach", "com/sun/tools/attach"]
+
+[[rule]]
+tag = "P"
+name = "Process hollowing loader"
+severity = "high"
+scope = "binary"
+minimum = 2
+imports = ["NtUnmapViewOfSection", "ZwUnmapViewOfSection", "ResumeThread", "SetThreadContext", "GetThreadContext"]
+strings = ["Process Ghosting", "process hollowing", "Overwrite successful"]
+
+[[rule]]
+tag = "B"
+name = "Commercial packer or protector"
+severity = "medium"
+scope = "binary"
+minimum = 1
+sections = [".vmp0", ".vmp1", ".vmp2", ".themida", ".winlice", "UPX0", "UPX1", ".mpress1", ".mpress2", ".petite", ".enigma1", ".enigma2", ".aspack", ".adata", ".nsp0", ".obsidium"]
+
+[[rule]]
+tag = "C"
+name = ".NET obfuscator"
+severity = "medium"
+scope = "binary"
+minimum = 1
+strings = ["ConfuserEx", "Confuser.Core", "Eazfuscator", "BabelObfuscator", "SmartAssembly", ".NET Reactor", "Agile.NET", "ILProtector", "DotfuscatorAttribute", "Xenocode"]
+
+[[rule]]
+tag = "E"
+name = "Packaged script runtime"
+severity = "low"
+scope = "binary"
+minimum = 1
+strings = ["PyInstaller", "pyi-runtime-tmpdir", "_MEIPASS", "Nuitka", "cx_Freeze", "py2exe", "AutoHotkey", "AHK_"]
+
+[[rule]]
+tag = "O"
+name = "Java cheat obfuscator"
+severity = "medium"
+scope = "archive"
+minimum = 1
+strings = ["Skidfuscator", "skidfuscator", "Paramorphism", "paramorphism", "Radon Obfuscator", "radon/", "Caesium", "Bozar", "Branchlock", "branchlock", "Binscure", "SuperBlaubeere27", "qProtect", "Stringer Java Obfuscator", "JNICLoader", "jnic/JNIC", "Scuti", "Allatori", "Zelix KlassMaster"]
+
+[[rule]]
+tag = "N"
+name = "Native GUI overlay in mod"
+severity = "medium"
+scope = "archive"
+minimum = 1
+strings = ["imgui/gl3", "imgui/glfw", "imgui.gl3", "imgui.glfw"]
+
+[[rule]]
+tag = "X"
+name = "Runtime command execution"
+severity = "low"
+scope = "archive"
+minimum = 2
+strings = ["java/lang/ProcessBuilder", "cmd.exe", "powershell", "/bin/sh", "cmd /c"]
+
+[[rule]]
+tag = "L"
+name = "Remote class loading"
+severity = "low"
+scope = "archive"
+minimum = 5
+strings = ["java/net/URLClassLoader", "defineClass", "java/net/HttpURLConnection", "sun/misc/Unsafe", "defineAnonymousClass", "java/lang/invoke/MethodHandles$Lookup"]
+
+[[rule]]
+tag = "S"
+name = "Anti-forensic routine"
+severity = "high"
+scope = "both"
+minimum = 1
+strings = ["fsutil usn deletejournal", "wevtutil cl", "Clear-EventLog", "\\Windows\\Prefetch", "vssadmin delete shadows", "ClearProgramCache", "bam\\State\\UserSettings", "history -c", "shred -u"]
+
+[[rule]]
+tag = "M"
+name = "Minecraft input automation"
+severity = "high"
+scope = "binary"
+minimum = 2
+strings = ["key_key.hotbar.1", "key_key.jump", "key_key.sprint", "key_key.inventory", "key.attack", "javaw.exe"]

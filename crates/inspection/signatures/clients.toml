@@ -1,0 +1,617 @@
+# Client signatures. A single string or domain hit identifies the client.
+# Strings containing '/' are also matched in their '.'-separated form.
+# Categories: blatant, ghost, crystal, clicker, macro, utility, loader.
+
+[[client]]
+name = "Meteor Client"
+category = "blatant"
+file_names = ["meteor-client"]
+strings = ["meteordevelopment/meteorclient", "meteor-client.mixins.json"]
+domains = ["meteorclient.com"]
+
+[[client]]
+name = "Wurst"
+category = "blatant"
+file_names = ["wurst-client", "wurstclient"]
+strings = ["net/wurstclient", "wurst.mixins.json", "key.wurst.zoom"]
+domains = ["wurstclient.net"]
+
+[[client]]
+name = "LiquidBounce"
+category = "blatant"
+file_names = ["liquidbounce"]
+strings = ["net/ccbluex/liquidbounce", "liquidbounce.mixins.json"]
+domains = ["liquidbounce.net", "ccbluex.net"]
+
+[[client]]
+name = "FDPClient"
+category = "blatant"
+strings = ["FDPClient", "net/fdpclient"]
+
+[[client]]
+name = "Aristois"
+category = "blatant"
+strings = ["me/deftware/aristois", "me/deftware/client/framework"]
+domains = ["aristois.net"]
+
+[[client]]
+name = "Impact"
+category = "blatant"
+strings = ["me/zero/clarinet", "impactclient.net"]
+domains = ["impactclient.net"]
+
+[[client]]
+name = "Future Client"
+category = "blatant"
+file_names = ["future-client", "futureclient"]
+strings = ["net/futureclient", "futureclient.net"]
+domains = ["futureclient.net"]
+
+[[client]]
+name = "RusherHack"
+category = "blatant"
+file_names = ["rusherhack"]
+strings = ["org/rusherhack", "rusherhack.org"]
+domains = ["rusherhack.org"]
+
+[[client]]
+name = "ThunderHack"
+category = "blatant"
+file_names = ["thunderhack"]
+strings = ["thunder/hack/", "thunderhack.mixins.json"]
+
+[[client]]
+name = "Inertia"
+category = "blatant"
+strings = ["com/inertiaclient", "inertiaclient.com"]
+domains = ["inertiaclient.com"]
+
+[[client]]
+name = "BleachHack"
+category = "blatant"
+strings = ["org/bleachhack", "bleachhack.mixins.json"]
+
+[[client]]
+name = "Coffee Client"
+category = "blatant"
+strings = ["coffee/client/feature", "coffeeclient.mixins.json"]
+
+[[client]]
+name = "Krypton"
+category = "crystal"
+file_names = ["kryptonclient"]
+strings = ["dev/krypton", "skid/krypton"]
+
+[[client]]
+name = "Argon"
+category = "crystal"
+file_names = ["argonclient"]
+strings = ["dev/lvstrng/argon", "lvstrng"]
+
+[[client]]
+name = "Prestige Client"
+category = "crystal"
+file_names = ["prestige"]
+strings = ["prestigeclient", "PrestigeClient"]
+domains = ["prestigeclient.vip"]
+
+[[client]]
+name = "Doomsday Client"
+category = "crystal"
+file_names = ["doomsday"]
+strings = ["doomsdayclient", "DoomsdayClient"]
+domains = ["doomsdayclient.com"]
+
+[[client]]
+name = "198Macros"
+category = "macro"
+file_names = ["198macro"]
+strings = ["macro_198", "Macro198", "198macros"]
+domains = ["198macros.com"]
+
+[[client]]
+name = "Dqrkis Client"
+category = "crystal"
+file_names = ["dqrkis"]
+strings = ["Dqrkis Client", "dqrkis"]
+
+[[client]]
+name = "Virel"
+category = "crystal"
+strings = ["dev/virel"]
+
+[[client]]
+name = "Gamble Client"
+category = "crystal"
+strings = ["dev/gambleclient"]
+
+[[client]]
+name = "Greaj"
+category = "crystal"
+strings = ["xyz/greaj"]
+
+[[client]]
+name = "Chainlibs Loader"
+category = "loader"
+strings = ["org/chainlibs/module"]
+
+[[client]]
+name = "Phantom"
+category = "crystal"
+strings = ["phantom-refmap.json"]
+
+[[client]]
+name = "Walksy Crystal Optimizer"
+category = "crystal"
+file_names = ["walksy"]
+strings = ["WalksyCrystalOptimizerMod", "walsky.optimizer", "walksy_optimizer"]
+
+[[client]]
+name = "LWFH Crystal"
+category = "crystal"
+strings = ["LWFH Crystal", "ＬＷＦＨ Ｃｒｙｓｔａｌ"]
+
+[[client]]
+name = "Novoware"
+category = "crystal"
+file_names = ["novoware"]
+strings = ["novoware"]
+domains = ["novoware.net"]
+
+[[client]]
+name = "Phobos"
+category = "blatant"
+strings = ["me/earth/phobos"]
+
+[[client]]
+name = "KAMI Blue"
+category = "blatant"
+strings = ["org/kamiblue"]
+
+[[client]]
+name = "KAMI"
+category = "blatant"
+strings = ["me/zeroeightsix/kami"]
+
+[[client]]
+name = "Lambda"
+category = "blatant"
+strings = ["com/lambda/client"]
+
+[[client]]
+name = "SalHack"
+category = "blatant"
+strings = ["me/ionar/salhack"]
+
+[[client]]
+name = "GameSense"
+category = "blatant"
+strings = ["com/gamesense/client"]
+
+[[client]]
+name = "Konas"
+category = "blatant"
+strings = ["com/konasclient"]
+
+[[client]]
+name = "Ares"
+category = "blatant"
+strings = ["dev/tigr/ares"]
+
+[[client]]
+name = "Seppuku"
+category = "blatant"
+strings = ["me/rigamortis/seppuku"]
+
+[[client]]
+name = "ForgeHax"
+category = "blatant"
+strings = ["dev/fiki/forgehax", "com/matt/forgehax"]
+
+[[client]]
+name = "Huzuni"
+category = "blatant"
+strings = ["net/halalaboos/huzuni"]
+
+[[client]]
+name = "Sigma"
+category = "blatant"
+strings = ["info/sigmaclient", "com/mentalfrostbyte"]
+domains = ["sigmaclient.info"]
+
+[[client]]
+name = "Rise"
+category = "blatant"
+strings = ["com/alan/clients"]
+domains = ["rise.today", "riseclient.com"]
+
+[[client]]
+name = "Novoline"
+category = "blatant"
+strings = ["cc/novoline"]
+domains = ["novoline.wtf"]
+
+[[client]]
+name = "Exhibition"
+category = "blatant"
+strings = ["exhibition/module", "exhibition/management"]
+
+[[client]]
+name = "Tenacity"
+category = "blatant"
+strings = ["dev/tenacity/module"]
+
+[[client]]
+name = "Augustus"
+category = "blatant"
+strings = ["net/augustus/modules"]
+
+[[client]]
+name = "Raven"
+category = "ghost"
+file_names = ["ravenb+", "raven b+", "ravenbs"]
+strings = ["keystrokesmod/client/module", "a/keystrokesmod", "raven-bs", "ravenb+"]
+
+[[client]]
+name = "Vape V4"
+category = "ghost"
+file_names = ["vape"]
+strings = ["manthe/vape", "gg/vape", "com/sun/jna/z/Main"]
+domains = ["vape.gg", "intent.store"]
+
+[[client]]
+name = "Vape 2.47"
+category = "ghost"
+strings = ["yCcADi"]
+
+[[client]]
+name = "Vape 2.50"
+category = "ghost"
+strings = ["74.91.125.194"]
+
+[[client]]
+name = "Vape Lite"
+category = "ghost"
+file_names = ["vapelite", "vape lite"]
+strings = ["144.217.241.181", "vapelite"]
+
+[[client]]
+name = "Bape"
+category = "ghost"
+file_names = ["bape"]
+strings = ["trumpclientftw_bape"]
+
+[[client]]
+name = "Drek"
+category = "ghost"
+strings = ["dg82fo.pw"]
+domains = ["dg82fo.pw"]
+
+[[client]]
+name = "Gucci"
+category = "ghost"
+strings = ["G0ttaDipMen.java"]
+
+[[client]]
+name = "Harambe"
+category = "ghost"
+strings = ["Harambe.png"]
+
+[[client]]
+name = "Incognito"
+category = "ghost"
+strings = ["czaarek99"]
+
+[[client]]
+name = "Kurium"
+category = "ghost"
+file_names = ["kurium"]
+strings = ["dinkIO ;-)", "Cracked by dinkIO"]
+
+[[client]]
+name = "Onetap"
+category = "ghost"
+file_names = ["onetap"]
+strings = ["onetap.cc"]
+domains = ["onetap.cc"]
+
+[[client]]
+name = "Spooky"
+category = "ghost"
+strings = ["bspkrs.IlIIIlIlIllIIlllIllIllIII"]
+
+[[client]]
+name = "Veiv"
+category = "ghost"
+strings = ["hi.a2"]
+
+[[client]]
+name = "Zuiy"
+category = "ghost"
+strings = ["0SO1Lk2KASxzsd"]
+
+[[client]]
+name = "Vea"
+category = "ghost"
+strings = ["/tcpnodelaymod/COM1"]
+
+[[client]]
+name = "Motion Blur Misplace"
+category = "ghost"
+strings = ["TCNH$1"]
+
+[[client]]
+name = "AVIX"
+category = "ghost"
+strings = ["/AVIX-Config"]
+
+[[client]]
+name = "Entropy"
+category = "ghost"
+file_names = ["entropyclient"]
+strings = ["entropy.club"]
+domains = ["entropy.club"]
+
+[[client]]
+name = "Drip"
+category = "ghost"
+file_names = ["dripclient", "drip lite", "driplite"]
+strings = ["dripclient", "drip.gg"]
+domains = ["drip.gg"]
+
+[[client]]
+name = "Slinky"
+category = "ghost"
+file_names = ["slinky"]
+strings = ["SlinkyLoader", "slinky.gg", "Slinky Hook"]
+domains = ["slinky.gg"]
+
+[[client]]
+name = "Koid"
+category = "ghost"
+file_names = ["koid"]
+strings = ["koid.cc", "KoidClient"]
+domains = ["koid.cc"]
+
+[[client]]
+name = "Whiteout"
+category = "ghost"
+file_names = ["whiteout"]
+strings = ["whiteout.lol"]
+domains = ["whiteout.lol"]
+
+[[client]]
+name = "Itami"
+category = "ghost"
+file_names = ["itami"]
+strings = ["itami.cc"]
+domains = ["itami.cc"]
+
+[[client]]
+name = "Hydrogen Client"
+category = "ghost"
+file_names = ["hydrogenclient"]
+strings = ["HydrogenClient", "hydrogen.ac"]
+
+[[client]]
+name = "Prestige Injector"
+category = "loader"
+file_names = ["prestigeinjector"]
+strings = ["PrestigeInjector"]
+
+[[client]]
+name = "Kaos Client"
+category = "ghost"
+file_names = ["kaosclient"]
+strings = ["KaosClient"]
+
+[[client]]
+name = "Obscure Client"
+category = "ghost"
+strings = ["ObscureClient"]
+
+[[client]]
+name = "Crown"
+category = "ghost"
+strings = ["CrownCheat"]
+
+[[client]]
+name = "Icetea"
+category = "ghost"
+file_names = ["icetea"]
+strings = ["IceteaClient"]
+
+[[client]]
+name = "Asteria"
+category = "crystal"
+strings = ["dev/asteria", "AsteriaClient"]
+
+[[client]]
+name = "Xenon"
+category = "crystal"
+strings = ["dev/xenon", "XenonClient"]
+
+[[client]]
+name = "Hellion"
+category = "crystal"
+strings = ["dev/hellion", "HellionClient"]
+
+[[client]]
+name = "Catlean"
+category = "crystal"
+strings = ["catlean"]
+
+[[client]]
+name = "Orchard"
+category = "crystal"
+strings = ["dev/orchard"]
+
+[[client]]
+name = "Gypsy"
+category = "crystal"
+strings = ["dev/gypsy", "GypsyClient"]
+
+[[client]]
+name = "OP Auto Clicker"
+category = "clicker"
+file_names = ["opautoclicker", "op auto clicker"]
+strings = ["OP Auto Clicker", "opautoclicker"]
+domains = ["opautoclicker.com"]
+
+[[client]]
+name = "GS Auto Clicker"
+category = "clicker"
+file_names = ["gsautoclicker", "gs auto clicker"]
+strings = ["GS Auto Clicker", "GSAutoClicker"]
+domains = ["goldensoftware.org"]
+
+[[client]]
+name = "Vroom Clicker"
+category = "clicker"
+file_names = ["vroomclicker", "vroom clicker"]
+strings = ["VroomClicker"]
+
+[[client]]
+name = "Mango Clicker"
+category = "clicker"
+file_names = ["mangoclicker", "mango clicker"]
+strings = ["MangoClicker"]
+
+[[client]]
+name = "Lilith Clicker"
+category = "clicker"
+file_names = ["lilithclicker", "lilith clicker"]
+strings = ["LilithClicker"]
+
+[[client]]
+name = "Doggo Clicker"
+category = "clicker"
+file_names = ["doggoclicker", "doggo clicker"]
+strings = ["DoggoClicker"]
+
+[[client]]
+name = "Aion Clicker"
+category = "clicker"
+file_names = ["aionclicker", "aion clicker"]
+strings = ["AionClicker"]
+
+[[client]]
+name = "Aurium Clicker"
+category = "clicker"
+file_names = ["auriumclicker", "aurium clicker"]
+strings = ["AuriumClicker"]
+
+[[client]]
+name = "Ozix Clicker"
+category = "clicker"
+file_names = ["ozixclicker", "ozix clicker"]
+strings = ["OzixClicker"]
+
+[[client]]
+name = "Dope Clicker"
+category = "clicker"
+file_names = ["dopeclicker", "dope clicker"]
+strings = ["DopeClicker"]
+
+[[client]]
+name = "Blatant Clicker"
+category = "clicker"
+file_names = ["blatantclicker", "blatant clicker"]
+strings = ["BlatantClicker"]
+
+[[client]]
+name = "Fox Clicker"
+category = "clicker"
+file_names = ["foxclicker", "fox clicker"]
+strings = ["FoxClicker"]
+
+[[client]]
+name = "Axenta Clicker"
+category = "clicker"
+file_names = ["axentaclicker", "axenta clicker"]
+strings = ["AxentaClicker"]
+
+[[client]]
+name = "Luvsy Clicker"
+category = "clicker"
+file_names = ["luvsyclicker", "luvsy clicker"]
+strings = ["LuvsyClicker"]
+
+[[client]]
+name = "Pixel Clicker"
+category = "clicker"
+file_names = ["pixelclicker", "pixel clicker"]
+strings = ["PixelClicker"]
+
+[[client]]
+name = "Rappi Clicker"
+category = "clicker"
+file_names = ["rappiclicker", "rappi clicker"]
+strings = ["RappiClicker"]
+
+[[client]]
+name = "Sukki Clicker"
+category = "clicker"
+file_names = ["sukkiclicker", "sukki clicker"]
+strings = ["SukkiClicker"]
+
+[[client]]
+name = "Vega Clicker"
+category = "clicker"
+file_names = ["vegaclicker", "vega clicker"]
+strings = ["VegaClicker"]
+
+[[client]]
+name = "Wok Clicker"
+category = "clicker"
+file_names = ["wokclicker", "wok clicker"]
+strings = ["WokClicker"]
+
+[[client]]
+name = "Epic Clicker"
+category = "clicker"
+file_names = ["epicclicker", "epic clicker"]
+strings = ["EpicClicker"]
+
+[[client]]
+name = "1337 Clicker"
+category = "clicker"
+file_names = ["1337clicker", "1337 clicker"]
+strings = ["1337Clicker"]
+
+[[client]]
+name = "Penguin Switcher"
+category = "clicker"
+file_names = ["penguinswitcher"]
+strings = ["PenguinSwitcher"]
+
+[[client]]
+name = "XClicker"
+category = "clicker"
+file_names = ["xclicker"]
+strings = ["xclicker"]
+
+[[client]]
+name = "JNativeHook Input Hook"
+category = "clicker"
+strings = ["JNativeHook", "jnativehook", "com/github/kwhat/jnativehook"]
+
+[[client]]
+name = "Baritone"
+category = "utility"
+strings = ["baritone/api", "baritone.mixins.json"]
+
+[[client]]
+name = "Advanced XRay"
+category = "utility"
+strings = ["pro/mikey/xray"]
+
+[[client]]
+name = "Freecam"
+category = "utility"
+strings = ["net/xolt/freecam"]
+
+[[client]]
+name = "Seed Cracker"
+category = "utility"
+strings = ["kaptainwutax/seedcracker"]

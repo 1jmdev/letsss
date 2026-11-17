@@ -1,0 +1,21 @@
+[package]
+name = "inspection_cli"
+description = "Command-line interface for letsSS screenshare inspection"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "letsss"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+comfy-table.workspace = true
+console.workspace = true
+indicatif.workspace = true
+inspection.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+is_elevated.workspace = true
+runas.workspace = true

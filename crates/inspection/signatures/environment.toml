@@ -1,0 +1,214 @@
+# Environment knowledge: launch flags, trusted components and risk sources.
+
+legitimate_agents = ["jmxremote", "yjp", "jrebel", "newrelic", "jacoco", "theseus", "idea_rt", "debugger-agent", "lunar", "authlib-injector", "essential"]
+
+impersonated_mods = ["sodium", "lithium", "iris", "modmenu", "fabric-api", "fabricloader", "entityculling", "ferritecore", "krypton", "c2me", "optifine", "cloth-config", "starlight", "zoomify"]
+
+forensic_domains = ["github.com", "githubusercontent.com", "discord.com", "discordapp.com", "virustotal.com", "modrinth.com", "echo.ac", "anticheat.ac", "voidtools.com", "systeminformer.sourceforge.io", "nirsoft.net", "ericzimmerman.github.io"]
+
+trusted_module_directories = ["\\windows\\", "\\program files\\nvidia", "\\program files\\amd", "/usr/lib", "/lib/", "/usr/share", "/nix/store", "/opt/"]
+
+trusted_module_names = ["lwjgl", "glfw", "openal", "jemalloc", "jinput", "jna", "discord", "gameoverlayrenderer", "graphics-hook", "rtsshooks", "nvoglv", "atio6axx", "obs-", "overwolf", "medal", "libjvm", "jvm.dll", "java.dll", "zip.dll", "net.dll", "nio.dll", "awt.dll", "jimage", "verify", "management", "sunmscapi", "fontmanager", "freetype", "lcms", "jsound", "prefs", "extnet", "attach", "libjava", "libnet", "libnio", "libzip"]
+
+[[launch_flag]]
+prefix = "-javaagent:"
+severity = "high"
+title = "Java agent attached at launch"
+
+[[launch_flag]]
+prefix = "-agentpath:"
+severity = "high"
+title = "Native JVM agent attached at launch"
+
+[[launch_flag]]
+prefix = "-agentlib:"
+severity = "high"
+title = "JVM agent library loaded"
+
+[[launch_flag]]
+prefix = "-Xbootclasspath/p:"
+severity = "high"
+title = "Bootstrap class path prepended"
+
+[[launch_flag]]
+prefix = "-Xbootclasspath/a:"
+severity = "high"
+title = "Bootstrap class path appended"
+
+[[launch_flag]]
+prefix = "-Djdk.attach.allowAttachSelf"
+severity = "high"
+title = "Self-attach enabled"
+
+[[launch_flag]]
+prefix = "-Dfabric.addMods"
+severity = "medium"
+title = "Fabric mods loaded from external path"
+
+[[launch_flag]]
+prefix = "-Dloader.addMods"
+severity = "medium"
+title = "Quilt mods loaded from external path"
+
+[[launch_flag]]
+prefix = "-Dfabric.gameJarPath"
+severity = "medium"
+title = "Fabric game JAR overridden"
+
+[[launch_flag]]
+prefix = "-Dloader.gameJarPath"
+severity = "medium"
+title = "Quilt game JAR overridden"
+
+[[launch_flag]]
+prefix = "-Djava.library.path"
+severity = "low"
+title = "Native library path overridden"
+
+[[launch_flag]]
+prefix = "-Djna.boot.library.path"
+severity = "low"
+title = "JNA library path overridden"
+
+[[launch_flag]]
+prefix = "--tweakClass"
+severity = "medium"
+title = "LaunchWrapper tweak class"
+
+[[launch_flag]]
+prefix = "-Dfml.coreMods.load"
+severity = "medium"
+title = "Forge core mods forced"
+
+[[launch_flag]]
+prefix = "-XX:+DisableAttachMechanism"
+severity = "medium"
+title = "Attach mechanism disabled to resist inspection"
+
+[[macro_software]]
+process = "razer synapse"
+name = "Razer Synapse"
+
+[[macro_software]]
+process = "lghub"
+name = "Logitech G HUB"
+
+[[macro_software]]
+process = "lcore"
+name = "Logitech Gaming Software"
+
+[[macro_software]]
+process = "bloody"
+name = "Bloody mouse software"
+
+[[macro_software]]
+process = "icue"
+name = "Corsair iCUE"
+
+[[macro_software]]
+process = "steelseriesgg"
+name = "SteelSeries GG"
+
+[[macro_software]]
+process = "autohotkey"
+name = "AutoHotkey"
+
+[[macro_software]]
+process = "xdotool"
+name = "xdotool"
+
+[[macro_software]]
+process = "ydotool"
+name = "ydotool"
+
+[[macro_software]]
+process = "xclicker"
+name = "XClicker"
+
+[[macro_software]]
+process = "autoclick"
+name = "Generic autoclicker"
+
+[[macro_software]]
+process = "tinytask"
+name = "TinyTask"
+
+[[macro_software]]
+process = "pulover"
+name = "Pulover's Macro Creator"
+
+[[macro_software]]
+process = "glorious"
+name = "Glorious Core"
+
+[[macro_software]]
+process = "redragon"
+name = "Redragon mouse software"
+
+[[download_source]]
+host = "modrinth.com"
+rating = "trusted"
+
+[[download_source]]
+host = "curseforge.com"
+rating = "trusted"
+
+[[download_source]]
+host = "forgecdn.net"
+rating = "trusted"
+
+[[download_source]]
+host = "github.com"
+rating = "review"
+
+[[download_source]]
+host = "githubusercontent.com"
+rating = "review"
+
+[[download_source]]
+host = "discord"
+rating = "risky"
+
+[[download_source]]
+host = "mediafire.com"
+rating = "risky"
+
+[[download_source]]
+host = "mega.nz"
+rating = "risky"
+
+[[download_source]]
+host = "dropbox.com"
+rating = "risky"
+
+[[download_source]]
+host = "drive.google.com"
+rating = "risky"
+
+[[download_source]]
+host = "gofile.io"
+rating = "risky"
+
+[[download_source]]
+host = "anonfiles"
+rating = "risky"
+
+[[download_source]]
+host = "anydesk"
+rating = "suspicious"
+
+[[download_source]]
+host = "doomsdayclient"
+rating = "suspicious"
+
+[[download_source]]
+host = "prestigeclient"
+rating = "suspicious"
+
+[[download_source]]
+host = "198macros"
+rating = "suspicious"
+
+[[download_source]]
+host = "dqrkis"
+rating = "suspicious"

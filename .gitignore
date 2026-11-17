@@ -8,3 +8,4 @@ src-tauri/gen/schemas
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+dist_bin
