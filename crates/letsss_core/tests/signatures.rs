@@ -1,4 +1,4 @@
-use inspection::{
+use letsss_core::{
     Signatures,
     signatures::{Matcher, Settings, Subject},
 };

@@ -1,5 +1,5 @@
 [package]
-name = "inspection"
+name = "letsss_core"
 description = "Platform-neutral Minecraft screenshare inspection core"
 version.workspace = true
 edition.workspace = true

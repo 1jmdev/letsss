@@ -9,7 +9,7 @@ use std::{fs, path::PathBuf, sync::atomic::AtomicBool};
 
 use anyhow::Context;
 use clap::Parser;
-use inspection::{Module, Options};
+use letsss_core::{Module, Options};
 
 /// Inspects this machine for Minecraft cheat clients and anti-forensic tampering.
 #[derive(Parser)]
@@ -87,7 +87,7 @@ fn main() -> anyhow::Result<()> {
 
     display::banner();
     let progress = progress::ModuleProgress::new(&options.modules);
-    let report = inspection::run(&options, &progress, &AtomicBool::new(false))
+    let report = letsss_core::run(&options, &progress, &AtomicBool::new(false))
         .context("running inspection")?;
     progress.finish();
     display::report(&report, arguments.verbose);

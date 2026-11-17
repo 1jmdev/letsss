@@ -62,7 +62,7 @@ impl Report {
 /// ```no_run
 /// use std::sync::atomic::AtomicBool;
 ///
-/// use inspection::{Finding, Observer, Options, Progress};
+/// use letsss_core::{Finding, Observer, Options, Progress};
 ///
 /// struct Silent;
 ///
@@ -71,7 +71,7 @@ impl Report {
 ///     fn finding(&self, _: &Finding) {}
 /// }
 ///
-/// let report = inspection::run(&Options::default(), &Silent, &AtomicBool::new(false)).unwrap();
+/// let report = letsss_core::run(&Options::default(), &Silent, &AtomicBool::new(false)).unwrap();
 /// println!("{:?}", report.verdict);
 /// ```
 pub fn run(options: &Options, observer: &dyn Observer, cancelled: &AtomicBool) -> Result<Report> {

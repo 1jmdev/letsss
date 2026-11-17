@@ -67,7 +67,7 @@ pub enum Evidence {
 /// A detection or observation reported to the operator.
 ///
 /// ```
-/// use inspection::{Evidence, Finding, Module, Severity};
+/// use letsss_core::{Evidence, Finding, Module, Severity};
 ///
 /// let finding = Finding::new(Module::Mods, Severity::High, "Cheat client in mod")
 ///     .with_client("Meteor Client")

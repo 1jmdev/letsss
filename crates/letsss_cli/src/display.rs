@@ -4,7 +4,7 @@ use comfy_table::{
     Attribute, Cell, Color, ContentArrangement, Table, presets::UTF8_FULL_CONDENSED,
 };
 use console::{Style, Term, style};
-use inspection::{Evidence, Finding, Module, Report, Severity, Verdict};
+use letsss_core::{Evidence, Finding, Module, Report, Severity, Verdict};
 
 const EVIDENCE_PREVIEW: usize = 3;
 const EVIDENCE_WIDTH: usize = 160;

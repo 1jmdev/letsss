@@ -4,7 +4,7 @@ use std::{collections::HashMap, time::Duration};
 
 use console::style;
 use indicatif::{MultiProgress, ProgressBar, ProgressStyle};
-use inspection::{Finding, Module, Observer, Progress, Severity};
+use letsss_core::{Finding, Module, Observer, Progress, Severity};
 
 const RESOLUTION: u64 = 1000;
 const TICK: Duration = Duration::from_millis(120);

@@ -48,7 +48,7 @@ impl Module {
 /// Parameters of one inspection session.
 ///
 /// ```
-/// use inspection::{Module, Options};
+/// use letsss_core::{Module, Options};
 ///
 /// let options = Options { modules: vec![Module::Mods], ..Options::default() };
 /// assert!(options.online);

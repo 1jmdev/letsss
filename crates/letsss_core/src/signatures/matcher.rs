@@ -41,7 +41,7 @@ struct Pattern {
 /// Multi-pattern matcher compiled once per signature table.
 ///
 /// ```
-/// use inspection::signatures::{Matcher, Settings, Subject};
+/// use letsss_core::signatures::{Matcher, Settings, Subject};
 ///
 /// let matcher = Matcher::new([(Subject::Client(0), "net/wurstclient")], Settings::default());
 /// let mut hits = 0;

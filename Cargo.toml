@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["crates/inspection", "crates/inspection_cli", "src-tauri"]
+members = ["crates/letsss_cli", "crates/letsss_core", "src-tauri"]
 
 [workspace.package]
 version = "0.1.0"
@@ -18,9 +18,9 @@ forensic-rs = "0.13"
 frnsc-prefetch = "0.13"
 goblin = "0.10"
 indicatif = "0.18"
-inspection = { path = "crates/inspection" }
 is_elevated = "0.1"
 jiff = "1.0"
+letsss_core = { path = "crates/letsss_core" }
 nt-time = "0.15"
 procfs = "0.18"
 rayon = "1.12"
@@ -32,6 +32,7 @@ sha1 = "0.11"
 sysinfo = { version = "0.40", default-features = false, features = ["system"] }
 tauri = { version = "2", features = [] }
 tauri-build = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
 thiserror = "2.0"
 toml = "1.2"
 usn-journal-rs = "0.5"

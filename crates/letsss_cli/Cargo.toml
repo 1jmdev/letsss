@@ -1,5 +1,5 @@
 [package]
-name = "inspection_cli"
+name = "letsss_cli"
 description = "Command-line interface for letsSS screenshare inspection"
 version.workspace = true
 edition.workspace = true
@@ -14,7 +14,7 @@ clap.workspace = true
 comfy-table.workspace = true
 console.workspace = true
 indicatif.workspace = true
-inspection.workspace = true
+letsss_core.workspace = true
 
 [target.'cfg(windows)'.dependencies]
 is_elevated.workspace = true

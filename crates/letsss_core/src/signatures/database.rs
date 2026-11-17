@@ -164,7 +164,7 @@ impl Database {
 /// Signature database together with its compiled matchers.
 ///
 /// ```
-/// let signatures = inspection::Signatures::load().unwrap();
+/// let signatures = letsss_core::Signatures::load().unwrap();
 /// assert!(!signatures.database.clients.is_empty());
 /// ```
 pub struct Signatures {
