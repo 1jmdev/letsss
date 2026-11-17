@@ -26,6 +26,8 @@ interface State {
   toggleModule: (module: Module) => void;
   setAllModules: (enabled: boolean) => void;
   setOnline: (online: boolean) => void;
+  scanAllInstallations: () => void;
+  chooseGameDirectory: () => Promise<void>;
   addPaths: (directory: boolean) => Promise<void>;
   removePath: (path: string) => void;
   start: () => Promise<void>;
@@ -36,7 +38,7 @@ interface State {
 export const useStore = create<State>((set, get) => ({
   view: "overview",
   host: null,
-  options: { modules: MODULES.map((module) => module.id), paths: [], online: true },
+  options: { modules: MODULES.map((module) => module.id), paths: [], online: true, game_directory: null },
   session: null,
   status: "idle",
   progress: {},
@@ -70,6 +72,13 @@ export const useStore = create<State>((set, get) => ({
     })),
 
   setOnline: (online) => set(({ options }) => ({ options: { ...options, online } })),
+
+  scanAllInstallations: () => set(({ options }) => ({ options: { ...options, game_directory: null } })),
+
+  chooseGameDirectory: async () => {
+    const directory = await api.chooseDirectory();
+    if (directory) set(({ options }) => ({ options: { ...options, game_directory: directory } }));
+  },
 
   addPaths: async (directory) => {
     const chosen = await api.choosePaths(directory);

@@ -1,9 +1,12 @@
 //! Human-readable terminal rendering of the inspection report.
 
+use std::path::PathBuf;
+
 use comfy_table::{
     Attribute, Cell, Color, ContentArrangement, Table, presets::UTF8_FULL_CONDENSED,
 };
 use console::{Style, Term, style};
+use dialoguer::{Input, Select, theme::ColorfulTheme};
 use letsss_core::{Evidence, Finding, Module, Report, Severity, Verdict};
 
 const EVIDENCE_PREVIEW: usize = 3;
@@ -24,6 +27,39 @@ pub fn banner() {
         style("Minecraft screenshare inspection").bold()
     );
     println!();
+}
+
+/// Asks whether to inspect every installation or one `.minecraft` folder; `None` means every installation.
+///
+/// Without an interactive terminal every installation is inspected.
+pub fn choose_game_directory() -> anyhow::Result<Option<PathBuf>> {
+    if !Term::stdout().is_term() {
+        return Ok(None);
+    }
+    let theme = ColorfulTheme::default();
+    let choice = Select::with_theme(&theme)
+        .with_prompt("Which Minecraft installations should be inspected?")
+        .items([
+            "Every installation on this machine",
+            "Only the .minecraft folder of the current session",
+        ])
+        .default(0)
+        .interact()?;
+    if choice == 0 {
+        return Ok(None);
+    }
+    let path: String = Input::with_theme(&theme)
+        .with_prompt("Path to the .minecraft folder")
+        .validate_with(|input: &String| {
+            if PathBuf::from(input.trim().trim_matches('"')).is_dir() {
+                Ok(())
+            } else {
+                Err("folder does not exist")
+            }
+        })
+        .interact_text()?;
+    println!();
+    Ok(Some(PathBuf::from(path.trim().trim_matches('"'))))
 }
 
 pub fn report(report: &Report, verbose: bool) {

@@ -70,10 +70,10 @@ run cargo zigbuild --release -p letsss_cli --target x86_64-pc-windows-gnu
 step "Collecting artifacts in ${output}"
 run rm -rf "${output}"
 run mkdir -p "${output}"
-run cp target/release/letsss "${output}/letsss-linux-x86_64"
-run cp target/x86_64-pc-windows-gnu/release/letsss.exe "${output}/letsss-windows-x86_64.exe"
+run cp target/release/letsss "${output}/letsSS-desktop-linux-x86_64"
+run cp target/release/letsss-cli "${output}/letsss-linux-x86_64"
+run cp target/x86_64-pc-windows-gnu/release/letsss-cli.exe "${output}/letsss-windows-x86_64.exe"
 run cp target/x86_64-pc-windows-msvc/release/letsss.exe "${output}/letsSS-desktop-windows-x86_64.exe"
-run cp target/release/bundle/appimage/letsSS_"${version}"_amd64.AppImage "${output}/"
 run cp target/release/bundle/deb/letsSS_"${version}"_amd64.deb "${output}/"
 run cp target/release/bundle/rpm/letsSS-"${version}"-1.x86_64.rpm "${output}/"
 (cd "${output}" && sha256sum -- * | tee SHA256SUMS)

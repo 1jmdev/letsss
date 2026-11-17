@@ -61,6 +61,8 @@ pub struct Options {
     pub paths: Vec<PathBuf>,
     /// Permits hash lookups against Modrinth.
     pub online: bool,
+    /// Restricts mod and log inspection to this `.minecraft` folder instead of every installation.
+    pub game_directory: Option<PathBuf>,
 }
 
 impl Default for Options {
@@ -69,6 +71,7 @@ impl Default for Options {
             modules: Module::ALL.to_vec(),
             paths: Vec::new(),
             online: true,
+            game_directory: None,
         }
     }
 }

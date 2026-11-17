@@ -25,7 +25,7 @@ Both commands download the latest release from
 [GitHub Releases](https://github.com/1jmdev/letsss/releases/latest) and start it with
 administrator / root rights, which are required for memory and system artifact inspection.
 
-The desktop app installers (`.msi` / `.exe` for Windows, `.deb` / `.AppImage` for Linux) are
+The desktop app (portable `.exe` for Windows, binary / `.deb` / `.rpm` for Linux) is
 on the same release page.
 
 ## What it checks

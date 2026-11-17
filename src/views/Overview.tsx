@@ -1,11 +1,24 @@
 import clsx from "clsx";
-import { AlertTriangle, FilePlus, FolderPlus, Play, X } from "lucide-react";
+import { AlertTriangle, FilePlus, FolderOpen, FolderPlus, Play, X } from "lucide-react";
 import { Button, PageHeader, Panel, Stat } from "../components/ui";
 import { formatTime, MODULES } from "../lib/format";
 import { useStore } from "../lib/store";
 
 export function Overview() {
-  const { host, options, status, toggleModule, setAllModules, setOnline, addPaths, removePath, start } = useStore();
+  const {
+    host,
+    options,
+    status,
+    toggleModule,
+    setAllModules,
+    setOnline,
+    scanAllInstallations,
+    chooseGameDirectory,
+    addPaths,
+    removePath,
+    start,
+  } = useStore();
+  const specific = options.game_directory !== null;
   const running = status === "running";
 
   return (
@@ -45,6 +58,35 @@ export function Overview() {
           tone={host && host.game_processes === 0 ? "text-muted" : "text-text"}
         />
       </div>
+
+      <Panel title="Minecraft installations" className="mb-6">
+        <div className="grid gap-3 md:grid-cols-2">
+          <button
+            onClick={scanAllInstallations}
+            className={clsx(
+              "rounded-lg border px-4 py-3 text-left transition-colors",
+              !specific ? "border-accent/50 bg-accent/10" : "border-border bg-raised/40 hover:bg-raised",
+            )}
+          >
+            <span className="block text-sm font-medium">Every installation</span>
+            <span className="block text-xs text-muted">Default launcher, Prism, MultiMC, Modrinth, CurseForge, Lunar and running games</span>
+          </button>
+          <button
+            onClick={chooseGameDirectory}
+            className={clsx(
+              "rounded-lg border px-4 py-3 text-left transition-colors",
+              specific ? "border-accent/50 bg-accent/10" : "border-border bg-raised/40 hover:bg-raised",
+            )}
+          >
+            <span className="flex items-center gap-2 text-sm font-medium">
+              <FolderOpen size={15} /> Current session only
+            </span>
+            <span className="block truncate text-xs text-muted">
+              {options.game_directory ?? "Choose the .minecraft folder the player is using"}
+            </span>
+          </button>
+        </div>
+      </Panel>
 
       <Panel
         title="Modules"

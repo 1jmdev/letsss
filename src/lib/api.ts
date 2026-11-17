@@ -42,6 +42,11 @@ export async function choosePaths(directory: boolean): Promise<string[]> {
   return Array.isArray(selection) ? selection : [selection];
 }
 
+export async function chooseDirectory(): Promise<string | null> {
+  const selection = await open({ directory: true, multiple: false });
+  return typeof selection === "string" ? selection : null;
+}
+
 export const chooseReportDestination = () =>
   save({
     defaultPath: `letsss-report-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-")}.json`,

@@ -51,6 +51,7 @@ export interface Options {
   modules: Module[];
   paths: string[];
   online: boolean;
+  game_directory: string | null;
 }
 
 export interface ProgressEvent {

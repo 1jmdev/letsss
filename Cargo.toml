@@ -14,6 +14,7 @@ anyhow = "1.0"
 clap = { version = "4.6", features = ["derive"] }
 comfy-table = "8.0"
 console = "0.16"
+dialoguer = "0.12"
 dirs = "7.0"
 flate2 = "1.1"
 forensic-rs = "0.13"

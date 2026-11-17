@@ -51,7 +51,10 @@ struct Candidate {
 }
 
 pub fn inspect(context: &Context) -> Result<Vec<Finding>> {
-    let directories = paths::game_directories(context.system);
+    let directories = match &context.options.game_directory {
+        Some(directory) => vec![directory.clone()],
+        None => paths::game_directories(context.system),
+    };
     let mut findings = Vec::new();
     let mut archives = Vec::new();
 

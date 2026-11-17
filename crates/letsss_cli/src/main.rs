@@ -20,6 +20,12 @@ struct Arguments {
     /// Modules to run; all modules run when omitted.
     #[arg(short, long, value_enum, value_delimiter = ',')]
     modules: Vec<ModuleArgument>,
+    /// Inspect mods and logs only in this .minecraft folder of the current session.
+    #[arg(short, long, value_name = "PATH", conflicts_with = "all_installations")]
+    game_dir: Option<PathBuf>,
+    /// Inspect every Minecraft installation without asking.
+    #[arg(long)]
+    all_installations: bool,
     /// Skip Modrinth hash verification.
     #[arg(long)]
     offline: bool,
@@ -79,13 +85,18 @@ fn main() -> anyhow::Result<()> {
             .map(Module::from)
             .collect(),
     };
+    display::banner();
+    let game_directory = match arguments.game_dir {
+        Some(directory) => Some(directory),
+        None if arguments.all_installations => None,
+        None => display::choose_game_directory()?,
+    };
     let options = Options {
         modules,
         paths: arguments.paths,
         online: !arguments.offline,
+        game_directory,
     };
-
-    display::banner();
     let progress = progress::ModuleProgress::new(&options.modules);
     let report = letsss_core::run(&options, &progress, &AtomicBool::new(false))
         .context("running inspection")?;
