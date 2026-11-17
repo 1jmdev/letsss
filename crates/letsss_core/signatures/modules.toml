@@ -24,7 +24,7 @@ strings = ["SilentAim", "Silent Aim", "Silent Rotations", "SilentRotations"]
 name = "Trigger Bot"
 category = "combat"
 weight = 3
-strings = ["TriggerBot", "Trigger Bot", "trigger_bot", "Trigger Key"]
+strings = ["TriggerBot", "Trigger Bot", "trigger_bot"]
 
 [[module]]
 name = "Reach"
@@ -72,7 +72,7 @@ strings = ["AxeSpam", "axe spam"]
 name = "Mace Swap"
 category = "combat"
 weight = 3
-strings = ["MaceSwap", "Mace Swap", "mace_swap", "AutoMace", "Silent Mace", "Mace Aura", "SpearSwap", "Spear Swap", "StunSlam", "Stun Slam", "Failed to switch to mace after axe!"]
+strings = ["MaceSwap", "Mace Swap", "mace_swap", "AutoMace", "Silent Mace", "Mace Aura", "SpearSwap", "Spear Swap", "StunSlam", "Stun Slam", "Stun slam", "Failed to switch to mace after axe!"]
 
 [[module]]
 name = "W-Tap"
@@ -102,7 +102,7 @@ strings = ["AutoCrystal", "Auto Crystal", "CrystalAura", "Crystal Aura", "AutoHi
 name = "Auto Anchor"
 category = "crystal"
 weight = 3
-strings = ["AutoAnchor", "Auto Anchor", "AnchorAura", "AnchorTweaks", "DoubleAnchor", "Double Anchor", "SafeAnchor", "Safe Anchor", "AirAnchor", "Anchor Macro", "anchorMacro", "Anchor Exploder", "AnchorAction", "MarlowAnchor", "Places two anchors for massive damage"]
+strings = ["AutoAnchor", "Auto Anchor", "AnchorAura", "AnchorTweaks", "DoubleAnchor", "Double Anchor", "SafeAnchor", "Safe Anchor", "AirAnchor", "Anchor Macro", "anchorMacro", "Anchor Exploder", "MarlowAnchor", "Places two anchors for massive damage"]
 
 [[module]]
 name = "Bed Aura"
@@ -198,7 +198,7 @@ strings = ["NoFall", "NoFallDamage", "AntiFall"]
 name = "No Slow"
 category = "movement"
 weight = 2
-strings = ["NoSlow", "NoSlowdown", "NoWeb"]
+strings = ["NoSlow", "NoSlowdown"]
 
 [[module]]
 name = "Scaffold"
@@ -240,7 +240,7 @@ strings = ["PackSpoof", "Pack Spoof"]
 name = "Self Destruct"
 category = "evasion"
 weight = 4
-strings = ["SelfDestruct", "Self Destruct", "selfdestruct", "Generic Selfdestruct", "String Cleaner", "Anti SS Tool", "USN Journal Cleaner", "Delete USN Journal", "player recently self destructed"]
+strings = ["SelfDestruct", "Self Destruct", "Generic Selfdestruct", "String Cleaner", "Anti SS Tool", "USN Journal Cleaner", "Delete USN Journal", "player recently self destructed"]
 
 [[module]]
 name = "Disabler"

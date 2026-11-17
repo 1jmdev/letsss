@@ -49,14 +49,15 @@ fn client_patterns_match_dotted_and_utf16_forms() {
 #[test]
 fn module_boundaries_accept_camel_case_and_reject_embedded_words() {
     let settings = Settings {
-        case_insensitive: true,
+        case_insensitive: false,
         boundary: true,
         fullwidth: true,
     };
     let matcher = Matcher::new([(Subject::Module(0), "Reach")], settings);
     assert_eq!(hits(&matcher, b"module Reach enabled").len(), 1);
     assert_eq!(hits(&matcher, b"class ReachModule").len(), 1);
-    assert_eq!(hits(&matcher, b"getReach()").len(), 1);
+    assert!(hits(&matcher, b"getReach()").is_empty());
+    assert!(hits(&matcher, b"module reach enabled").is_empty());
     assert!(hits(&matcher, b"the player reached the end").is_empty());
     assert!(hits(&matcher, b"overreach").is_empty());
     assert_eq!(hits(&matcher, "Ｒｅａｃｈ".as_bytes()).len(), 1);

@@ -80,6 +80,8 @@ pub struct Finding {
     pub severity: Severity,
     pub title: String,
     pub client: Option<String>,
+    /// File or process the finding concerns, used to group and deduplicate findings.
+    pub target: Option<String>,
     pub evidence: Vec<Evidence>,
     pub timestamp: Option<u64>,
 }
@@ -91,6 +93,7 @@ impl Finding {
             severity,
             title: title.into(),
             client: None,
+            target: None,
             evidence: Vec::new(),
             timestamp: None,
         }
@@ -98,6 +101,11 @@ impl Finding {
 
     pub fn with_client(mut self, client: impl Into<String>) -> Self {
         self.client = Some(client.into());
+        self
+    }
+
+    pub fn with_target(mut self, target: impl Into<String>) -> Self {
+        self.target = Some(target.into());
         self
     }
 

@@ -16,6 +16,7 @@ const EVIDENCE_PER_SUBJECT: usize = 3;
 const MODULE_WEIGHT_HIGH: u32 = 8;
 const MODULE_COUNT_HIGH: usize = 4;
 const MODULE_WEIGHT_MEDIUM: u32 = 4;
+const SOLITARY_MODULE_WEIGHT: u32 = 3;
 
 #[derive(Default)]
 struct Entry {
@@ -85,7 +86,20 @@ impl Tally {
         let mut findings = Vec::new();
         let mut module_names = Vec::new();
         let mut module_evidence = Vec::new();
-        let mut weight = 0;
+        let modules: Vec<usize> = self
+            .entries
+            .keys()
+            .filter_map(|subject| match subject {
+                Subject::Module(index) => Some(*index),
+                _ => None,
+            })
+            .collect();
+        let weight: u32 = modules
+            .iter()
+            .map(|index| database.modules[*index].weight)
+            .sum();
+        let named = modules.len() > 1 || weight >= SOLITARY_MODULE_WEIGHT;
+        let corroborated = named || self.has_client();
 
         for (subject, entry) in self.entries {
             match subject {
@@ -110,13 +124,12 @@ impl Tally {
                     findings.push(finding);
                 }
                 Subject::Module(index) => {
-                    weight += database.modules[index].weight;
                     module_names.push(database.modules[index].name.as_str());
                     module_evidence.extend(entry.evidence.into_iter().take(1));
                 }
                 Subject::Rule(index) => {
                     let rule = &database.rules[index];
-                    if entry.labels.len() < rule.minimum {
+                    if entry.labels.len() < rule.minimum || (rule.corroborated && !corroborated) {
                         continue;
                     }
                     let mut finding = Finding::new(
@@ -134,7 +147,7 @@ impl Tally {
             }
         }
 
-        if !module_names.is_empty() {
+        if named {
             let severity =
                 if weight >= MODULE_WEIGHT_HIGH || module_names.len() >= MODULE_COUNT_HIGH {
                     Severity::High

@@ -25,6 +25,7 @@ export interface Finding {
   severity: Severity;
   title: string;
   client: string | null;
+  target: string | null;
   evidence: Evidence[];
   timestamp: number | null;
 }

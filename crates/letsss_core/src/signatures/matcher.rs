@@ -17,7 +17,7 @@ pub enum Subject {
 #[derive(Clone, Copy, Debug, Default)]
 pub struct Settings {
     pub case_insensitive: bool,
-    /// Rejects matches embedded inside a longer lowercase word.
+    /// Rejects matches preceded by an alphanumeric character or followed by a lowercase continuation.
     pub boundary: bool,
     /// Adds fullwidth Unicode variants (`Ａｕｔｏ`) of ASCII patterns.
     pub fullwidth: bool,
@@ -150,13 +150,9 @@ fn bounded(haystack: &[u8], start: usize, end: usize, width: usize) -> bool {
         let low = *haystack.get(index)?;
         (width == 1 || haystack.get(index + 1) == Some(&0)).then_some(low)
     };
-    let first = haystack[start];
     let last = haystack[end - width];
     let start_ok = start < width
-        || character(start - width).is_none_or(|previous| {
-            !previous.is_ascii_alphanumeric()
-                || (!previous.is_ascii_uppercase() && first.is_ascii_uppercase())
-        });
+        || character(start - width).is_none_or(|previous| !previous.is_ascii_alphanumeric());
     let end_ok = character(end).is_none_or(|next| {
         !next.is_ascii_alphanumeric() || (next.is_ascii_uppercase() && !last.is_ascii_uppercase())
     });

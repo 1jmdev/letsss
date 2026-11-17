@@ -8,7 +8,7 @@ import type { Finding, Module, Severity } from "../lib/types";
 
 export function Findings() {
   const { report, setView } = useStore();
-  const [severities, setSeverities] = useState<Severity[]>(["critical", "high", "medium", "low"]);
+  const [severities, setSeverities] = useState<Severity[]>(["critical", "high", "medium"]);
   const [module, setModule] = useState<Module | "all">("all");
   const [query, setQuery] = useState("");
 
@@ -18,9 +18,21 @@ export function Findings() {
       (finding) =>
         severities.includes(finding.severity) &&
         (module === "all" || finding.module === module) &&
-        (!needle || `${finding.title} ${finding.client ?? ""}`.toLowerCase().includes(needle)),
+        (!needle || `${finding.title} ${finding.client ?? ""} ${finding.target ?? ""}`.toLowerCase().includes(needle)),
     );
   }, [report, severities, module, query]);
+
+  const groups = useMemo(
+    () => [
+      ...filtered
+        .reduce((groups, finding, index) => {
+          const key = finding.target ?? `#${index}`;
+          return groups.set(key, [...(groups.get(key) ?? []), finding]);
+        }, new Map<string, Finding[]>())
+        .values(),
+    ],
+    [filtered],
+  );
 
   if (!report) {
     return (
@@ -101,9 +113,19 @@ export function Findings() {
           <p className="text-sm text-muted">No findings match the current filters.</p>
         </Panel>
       ) : (
-        <div className="flex flex-col gap-2">
-          {filtered.map((finding, index) => (
-            <FindingRow key={`${finding.title}-${index}`} finding={finding} />
+        <div className="flex flex-col gap-4">
+          {groups.map((group, index) => (
+            <div key={group[0].target ?? index} className="flex flex-col gap-2">
+              {group[0].target && (
+                <div className="select-text px-1 text-xs">
+                  <span className="font-semibold text-text">{group[0].target.split(/[\\/]/).pop()}</span>
+                  <span className="ml-2 break-all text-muted">{group[0].target}</span>
+                </div>
+              )}
+              {group.map((finding) => (
+                <FindingRow key={finding.title} finding={finding} />
+              ))}
+            </div>
           ))}
         </div>
       )}

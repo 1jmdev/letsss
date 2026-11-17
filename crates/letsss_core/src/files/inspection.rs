@@ -22,6 +22,7 @@ const WALK_DEPTH: usize = 3;
 const TARGET_LIMIT: usize = 6000;
 const PATH_LIST_EXTENSION: &str = "txt";
 const ARCHIVE_EXTENSION: &str = "jar";
+const OWN_NAME_PREFIX: &str = "letsss";
 const DELETED_MEDIUM_COUNT: usize = 10;
 const EXTENSIONS: [&str; 14] = [
     "exe", "dll", "jar", "bat", "cmd", "ps1", "vbs", "ahk", "py", "sh", "appimage", "so", "scr",
@@ -82,9 +83,15 @@ pub fn inspect(context: &Context) -> Result<Vec<Finding>> {
     }
     targets.sort_unstable();
     targets.dedup();
-    if let Ok(own) = env::current_exe() {
-        targets.retain(|target| *target != own);
-    }
+    let own = env::current_exe().ok();
+    targets.retain(|target| {
+        Some(target) != own.as_ref()
+            && !target.file_name().is_some_and(|name| {
+                name.to_string_lossy()
+                    .to_ascii_lowercase()
+                    .starts_with(OWN_NAME_PREFIX)
+            })
+    });
     targets.truncate(TARGET_LIMIT);
 
     let completed = AtomicUsize::new(0);
@@ -95,7 +102,10 @@ pub fn inspect(context: &Context) -> Result<Vec<Finding>> {
             if context.checkpoint().is_err() {
                 return Vec::new();
             }
-            let findings = binary::analyze(context, path);
+            let findings: Vec<Finding> = binary::analyze(context, path)
+                .into_iter()
+                .map(|finding| finding.with_target(path.display().to_string()))
+                .collect();
             let done = completed.fetch_add(1, Ordering::Relaxed) + 1;
             context.report(
                 Module::Files,

@@ -123,7 +123,11 @@ pub fn inspect(context: &Context) -> Result<Vec<Finding>> {
         candidates
             .par_iter()
             .flat_map_iter(|candidate| {
-                let findings = assess(context, candidate, published.contains(&candidate.hash));
+                let findings: Vec<Finding> =
+                    assess(context, candidate, published.contains(&candidate.hash))
+                        .into_iter()
+                        .map(|finding| finding.with_target(candidate.path.display().to_string()))
+                        .collect();
                 let done = completed.fetch_add(1, Ordering::Relaxed) + 1;
                 context.report(
                     Module::Mods,

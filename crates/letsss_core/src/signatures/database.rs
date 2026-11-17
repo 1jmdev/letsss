@@ -75,6 +75,9 @@ pub struct Rule {
     pub imports: Vec<String>,
     #[serde(default)]
     pub sections: Vec<String>,
+    /// Reports the rule only when a client or module signature also matched the target.
+    #[serde(default)]
+    pub corroborated: bool,
 }
 
 #[derive(Clone, Debug, Deserialize)]
@@ -211,7 +214,7 @@ impl Signatures {
                         .map(move |text| (Subject::Module(index), text.as_str()))
                 }),
             Settings {
-                case_insensitive: true,
+                case_insensitive: false,
                 boundary: true,
                 fullwidth: true,
             },

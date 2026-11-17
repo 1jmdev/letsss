@@ -1,6 +1,6 @@
 //! Runs the selected modules in parallel and assembles the session report.
 
-use std::sync::atomic::AtomicBool;
+use std::{collections::HashSet, sync::atomic::AtomicBool};
 
 use rayon::prelude::*;
 use serde::Serialize;
@@ -123,6 +123,10 @@ pub fn run(options: &Options, observer: &dyn Observer, cancelled: &AtomicBool) -
             .severity
             .cmp(&left.severity)
             .then_with(|| left.module.cmp(&right.module))
+    });
+    let mut seen = HashSet::new();
+    findings.retain(|finding| {
+        finding.target.is_none() || seen.insert((finding.title.clone(), finding.target.clone()))
     });
     Ok(Report {
         verdict: Verdict::assess(&findings),

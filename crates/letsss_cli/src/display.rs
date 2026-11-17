@@ -64,32 +64,59 @@ pub fn choose_game_directory() -> anyhow::Result<Option<PathBuf>> {
 
 pub fn report(report: &Report, verbose: bool) {
     print_host(report);
+    let threshold = if verbose {
+        Severity::Informational
+    } else {
+        Severity::Medium
+    };
     let visible: Vec<&Finding> = report
         .findings
         .iter()
-        .filter(|finding| verbose || finding.severity > Severity::Informational)
+        .filter(|finding| finding.severity >= threshold)
         .collect();
 
     for module in Module::ALL {
-        let findings: Vec<&&Finding> = visible
-            .iter()
-            .filter(|finding| finding.module == module)
-            .collect();
-        if findings.is_empty() {
+        let mut groups: Vec<(Option<&str>, Vec<&Finding>)> = Vec::new();
+        for finding in visible.iter().filter(|finding| finding.module == module) {
+            let target = finding.target.as_deref();
+            match groups
+                .iter_mut()
+                .find(|(known, _)| target.is_some() && *known == target)
+            {
+                Some((_, members)) => members.push(finding),
+                None => groups.push((target, vec![finding])),
+            }
+        }
+        if groups.is_empty() {
             continue;
         }
         println!(
             "\n{} {} {}",
             style("■").cyan(),
             style(module.label()).bold().underlined(),
-            style(format!("({})", findings.len())).dim()
+            style(format!("({})", groups.len())).dim()
         );
-        for finding in findings {
-            print_finding(finding, verbose);
+        for (target, members) in groups {
+            if let Some(target) = target {
+                println!("  {}", style(target).bold());
+            }
+            for finding in members {
+                print_finding(finding, verbose);
+            }
         }
     }
     if visible.is_empty() {
         println!("\n  {}", style("Nothing suspicious was found.").green());
+    }
+    let hidden = report.findings.len() - visible.len();
+    if hidden > 0 {
+        println!(
+            "\n  {}",
+            style(format!(
+                "{hidden} low-confidence or informational findings hidden (use --verbose)"
+            ))
+            .dim()
+        );
     }
     print_summary(report);
 }
