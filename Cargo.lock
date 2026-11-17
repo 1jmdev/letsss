@@ -2105,7 +2105,7 @@ dependencies = [
 
 [[package]]
 name = "letsss"
-version = "0.2.2"
+version = "0.2.3"
 dependencies = [
  "letsss_core",
  "serde",
@@ -2117,7 +2117,7 @@ dependencies = [
 
 [[package]]
 name = "letsss_cli"
-version = "0.2.2"
+version = "0.2.3"
 dependencies = [
  "anyhow",
  "clap",
@@ -2132,7 +2132,7 @@ dependencies = [
 
 [[package]]
 name = "letsss_core"
-version = "0.2.2"
+version = "0.2.3"
 dependencies = [
  "aho-corasick",
  "dirs",
